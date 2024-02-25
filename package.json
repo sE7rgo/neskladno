@@ -23,6 +23,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
@@ -69,6 +71,7 @@
     "@storybook/react": "^6.5.12",
     "@storybook/testing-library": "^0.0.13",
     "babel-plugin-named-exports-order": "^0.0.2",
+    "gh-pages": "^6.1.1",
     "prettier": "2.8.4",
     "prettier-plugin-tailwindcss": "^0.2.3",
     "prop-types": "^15.8.1",
