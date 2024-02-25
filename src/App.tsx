@@ -24,14 +24,16 @@ function App() {
     // increasing difficulty
     difficulty >= 3 ? setDifficulty(Difficulty.Letter) : setDifficulty(prev => prev + 1);
   };
-  const handleLinkInsert = () => {};
+  const handleLinkInsert = (link: string) => {
+    setLink(link);
+  };
 
   return (
     <Router>
       <div className="app h-screen w-full bg-slate-50 p-6 transition-colors duration-500 ease-in-out dark:bg-slate-900">
         <AppDataContext.Provider value={{ duration, pace, difficulty, link }}>
           <Routes>
-            <Route path="/shoz-prydumaj" element={<Main />} />
+            <Route path="/game" element={<Main />} />
             <Route path="/about" element={<About />} />
             <Route
               path="/"

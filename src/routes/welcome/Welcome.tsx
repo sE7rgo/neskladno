@@ -1,5 +1,6 @@
 import React, { FC, useContext } from "react";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router";
 import { AppDataContext, AppDataType, Difficulty } from "../../context/AppDataContext";
 
 interface WelcomeProps {
@@ -20,8 +21,8 @@ const Welcome: FC<WelcomeProps> = ({
   onLinkInsert
 }) => {
   const appDataContext = useContext(AppDataContext);
-  console.log("context", appDataContext);
   const { t } = useTranslation();
+  const navigate = useNavigate();
 
   const DIFFICULTY_DESCRIPTIONS: Record<Difficulty, string> = {
     0: t("basic"),
@@ -39,6 +40,9 @@ const Welcome: FC<WelcomeProps> = ({
   };
   const handleLinkInsert = (link: string) => {
     onLinkInsert(link);
+  };
+  const handleSubmitButton = () => {
+    navigate("/game");
   };
   return (
     <div className="flex h-full w-2/4 flex-col items-center justify-center">
@@ -67,7 +71,7 @@ const Welcome: FC<WelcomeProps> = ({
           onChange={event => handleLinkInsert(event.target.value)}
         />
 
-        <button>
+        <button onClick={handleSubmitButton}>
           <h1 className="mt-5	 text-sky-600 dark:text-amber-500">&nbsp;{t("submitButton")}</h1>
         </button>
       </div>
