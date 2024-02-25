@@ -3,8 +3,7 @@ import "./App.css";
 
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Footer from "./components/Footer";
-import { AppDataContext } from "./context/AppDataProvider";
-import { AppDataType, Difficulty } from "./context/AppDataProvider/AppDataContext";
+import { AppDataContext, AppDataType, Difficulty } from "./context/AppDataContext";
 import About from "./routes/about";
 import Main from "./routes/main";
 import Welcome from "./routes/welcome";
