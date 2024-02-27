@@ -1,6 +1,6 @@
 /* This letter variation is AI generated. Has to be filtered */
 
-export const three = [
+export const threeLetters = [
   "БАБ",
   "БАВ",
   "БАГ",
